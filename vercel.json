@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/tatoeba-api/:path*",
+      "destination": "https://api.tatoeba.org/:path*"
+    },
+    {
+      "source": "/((?!assets/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
