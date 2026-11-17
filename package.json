@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "dev:ios": "turbo run ios --filter=@retainly/mobile",
+    "dev:web": "turbo run dev --filter=@retainly/web",
     "clean": "turbo run clean && rm -rf node_modules",
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\" --ignore-path .gitignore"
   },
