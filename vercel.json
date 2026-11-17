@@ -1,4 +1,7 @@
 {
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm --filter @retainly/web build",
+  "outputDirectory": "apps/web/dist",
   "rewrites": [
     {
       "source": "/tatoeba-api/:path*",
