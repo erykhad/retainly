@@ -1,3 +1,4 @@
+import { Sparkles } from "lucide-react";
 import { useNavigate } from "react-router";
 
 import { ListIcon } from "@/components/ListIcon";
@@ -19,6 +20,22 @@ export function PickListPage() {
       </div>
 
       <div className="rounded-xl bg-card/60 py-1">
+        <button
+          type="button"
+          className="flex w-full items-center gap-3 px-3 py-2.5 text-left hover:bg-muted/60"
+          onClick={() => navigate("/new", { replace: true })}
+        >
+          <span className="inline-flex size-8 items-center justify-center rounded-full bg-muted text-muted-foreground">
+            <Sparkles className="size-4" />
+          </span>
+          <span className="flex min-w-0 flex-col">
+            <span className="font-medium">Auto (Gemini)</span>
+            <span className="text-xs text-muted-foreground">
+              Pick an existing category or create one
+            </span>
+          </span>
+        </button>
+
         {Array.from(lists.values()).map((list) => (
           <button
             key={list.slug}
@@ -36,7 +53,7 @@ export function PickListPage() {
         ))}
         {lists.size === 0 ? (
           <p className="px-3 py-6 text-sm text-muted-foreground">
-            No lists yet. Create a list first.
+            No lists yet. Auto will create one with Gemini.
           </p>
         ) : null}
       </div>
